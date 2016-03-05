@@ -5,7 +5,7 @@
     <title>Refstrove.GitHub.io by refstrove</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
@@ -16,81 +16,79 @@
     </section>
 
     <section class="main-content">
-      <pre>
-	      <code> 
-			<script type="text/javascript">
-			var str="上海 闵行天气预报"
-			document.write(str.link("http://tianqi.2345.com/minhang/60008.htm"))
-			</script>		  
-			
-	    <div>
-		<audio id="audio1" style="width:25%" controls>Canvas not supported</audio>
-		</div>
-		<div>
-		<input type="text" id="audioFile" value="./Music/1.mp3" size="60" />
+    <pre><code> 
+		<div >
+			    <script type="text/javascript">
+			     var str="上海 闵行  天气预报"
+			     document.write(str.link("http://www.weather.com.cn/weather1d/101020200.shtml"))
+			    </script>		  
+	    </div>
+	    
+        <div>
+			<audio id="audio1" style="width:25%" controls>Canvas not supported</audio>
+			<div>
+			<input type="text" id="audioFile" value="./Music/mo.mp3" size="40" />
+			</div>
+			<button id="playbutton" style="color:blue;background-color:#DDA0DD;“ onclick="togglePlay();">Play</button><br/>
+			<button style="color:blue;background-color:#DDA0DD;“ onclick="increaseSpeed();">Increase speed</button>  <button  style="color:blue;background-color:#DDA0DD;“ onclick="decreaseSpeed();">Decrease speed</button><br/>
+			<div id="rate"></div>
 
-		</div>
-		<button id="playbutton" onclick="togglePlay();">Play</button><br/>
-		<button onclick="increaseSpeed();">Increase speed</button><br/>
-		<button onclick="decreaseSpeed();">Decrease speed</button><br/>
-		<div id="rate"></div>
+			 <script type="text/javascript">
+			   // Create a couple of global variables to use. 
+			   var audioElm = document.getElementById("audio1"); // Audio element
+			   var ratedisplay = document.getElementById("rate"); // Rate display area
 
-		 <script type="text/javascript">
-		   // Create a couple of global variables to use. 
-		   var audioElm = document.getElementById("audio1"); // Audio element
-		   var ratedisplay = document.getElementById("rate"); // Rate display area
+			   // Hook the ratechange event and display the current playbackRate after each change
+			   audioElm.addEventListener("ratechange", function () {
+				 ratedisplay.innerHTML = "Rate: " + audioElm.playbackRate;
+			   }, false);
 
-		   // Hook the ratechange event and display the current playbackRate after each change
-		   audioElm.addEventListener("ratechange", function () {
-			 ratedisplay.innerHTML = "Rate: " + audioElm.playbackRate;
-		   }, false);
+			   //  Alternates between play and pause based on the value of the paused property
+			   function togglePlay() {
+				 if (document.getElementById("audio1")) {
 
-		   //  Alternates between play and pause based on the value of the paused property
-		   function togglePlay() {
-			 if (document.getElementById("audio1")) {
-
-			   if (audioElm.paused == true) {
-				 playAudio(audioElm);    //  if player is paused, then play the file
-			   } else {
-				 pauseAudio(audioElm);   //  if player is playing, then pause
+				   if (audioElm.paused == true) {
+					 playAudio(audioElm);    //  if player is paused, then play the file
+				   } else {
+					 pauseAudio(audioElm);   //  if player is playing, then pause
+				   }
+				 }
 			   }
-			 }
-		   }
 
-		   function playAudio(audioElm) {
-			 document.getElementById("playbutton").innerHTML = "Pause"; // Set button text == Pause
-			 // Get file from text box and assign it to the source of the audio element 
-			 audioElm.src = document.getElementById('audioFile').value;
-			 audioElm.play();
-		   }
+			   function playAudio(audioElm) {
+				 document.getElementById("playbutton").innerHTML = "Pause"; // Set button text == Pause
+				 // Get file from text box and assign it to the source of the audio element 
+				 audioElm.src = document.getElementById('audioFile').value;
+				 audioElm.play();
+			   }
 
-		   function pauseAudio(audioElm) {
-			 document.getElementById("playbutton").innerHTML = "play"; // Set button text == Play
-			 audioElm.pause();
-		   }
+			   function pauseAudio(audioElm) {
+				 document.getElementById("playbutton").innerHTML = "play"; // Set button text == Play
+				 audioElm.pause();
+			   }
 
-		   // Increment playbackRate by 1 
-		   function increaseSpeed() {
-			 audioElm.playbackRate += 1;
-		   }
+			   // Increment playbackRate by 1 
+			   function increaseSpeed() {
+				 audioElm.playbackRate += 1;
+			   }
 
-		   // Cut playback rate in half
-		   function decreaseSpeed() {
-			 if (audioElm.playbackRate <= 1) {
-			   var temp = audioElm.playbackRate;
-			   audioElm.playbackRate = (temp / 2); 
-			 } else {
-			   audioElm.playbackRate -= 1;
-			 }
-		   }
-
-		 </script>
-
-			
-			回国时间倒计时：
-			<DIV id="CountMsg" class="HotDate">
+			   // Cut playback rate in half
+			   function decreaseSpeed() {
+				 if (audioElm.playbackRate <= 1) {
+				   var temp = audioElm.playbackRate;
+				   audioElm.playbackRate = (temp / 2); 
+				 } else {
+				   audioElm.playbackRate -= 1;
+				 }
+			   }
+			 </script>
+        </div>
+		
+		<div>
+		    回国时间倒计时：
+			<div id="CountMsg" class="HotDate">
 				<span id="t_d">00天</span><span id="t_h">00时</span><span id="t_m">00分</span><span id="t_s">00秒</span>
-			</DIV>
+			</div>
 			<script type="text/javascript">
 				function getRTime(){
 					var EndTime= new Date('2016/9/9 15:00:00'); //回国时间
@@ -108,16 +106,12 @@
 					document.getElementById("t_s").innerHTML = s + "秒";
 				}
 				setInterval(getRTime,1000);
-				</script>
-		
-		    </code>
-		</pre>
-      <footer class="site-footer">
-        <span class="site-footer-credits">This page was generated by wojiaminmiin.</span>
-      </footer>
-
-    </section>
-
-  
+			</script>
+		</div>
+	</code></pre>
+    <footer class="site-footer">
+        <span class="site-footer-credits">This page was generated by wojiaminmin.</span>
+    <footer>
+    </section>  
   </body>
 </html>
