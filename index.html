@@ -8,6 +8,40 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:35,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <style>
+	/*ul wrapper*/
+	#iSlider-wrapper {
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+		position: absolute;
+	}
+
+	#iSlider-wrapper ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	#iSlider-wrapper li {
+		position: absolute;
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-pack: center;
+		-webkit-box-align: center;
+		list-style: none;
+	}
+
+	#iSlider-wrapper li img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+  </style>
   </head>
   <body>
     <section class="page-header">
@@ -24,6 +58,46 @@
 
     <section class="main-content">
     <pre><code>
+    <div>
+	<link href="stylesheets/iSlider.css" rel="stylesheet">
+	<div id="iSlider-wrapper"></div>
+	<script type="text/javascript" src="javascripts/iSlider.js"></script>
+	<script type="text/javascript" src="javascripts/iSlider.animate.js"></script>
+	<script id="show-code">
+		var list = [
+			// picture
+			{
+				content: '<div style="font-size:4em;color:white;text-align: center">美丽的人啊</div>'
+			},
+			// HTML String
+			{
+				content: './images/IMG_2546.jpg'
+			},
+			// picture
+			{
+				content: './images/IMG_20150530_155948.jpg'
+			},
+			// HTML String
+			{
+				content: './images/IMG_20140908_122333.jpg'
+			},
+			// HTML String
+			{
+				content: './images/IMG_20150405_173716.jpg'
+			},
+		];
+
+		var S = new iSlider({
+			dom: document.getElementById('iSlider-wrapper'),
+			data: list,
+			isAutoplay: 1,
+			isLooping: 1,
+			isOverspread: 0,
+			animateTime: 80,
+			isVertical: false
+		});
+	</script>
+	</div>
     	<div> 
         <b><i>祝我家敏敏 天天美丽开心</i></b><br>
 	<b><i>愿我家敏敏 日日吃好睡好</i></b><br>
