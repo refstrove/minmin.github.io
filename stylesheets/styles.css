@@ -685,7 +685,7 @@ hr {
   outline: none;
   height: 3px;
   background: transparent url("../images/hr.gif") center center repeat-x;
-  margin: 0 0 20px;
+  margin: 0 0 5px;
 }
 
 dt {
@@ -698,7 +698,7 @@ dt {
   z-index: 100;
   left: 0;
   top: 0px;
-  height: 60px;
+  height: 40px;
   width: 100%;
   position: fixed;
   background: url(../images/nav-bg.gif) #353535;
@@ -721,7 +721,7 @@ dt {
   list-style: none;
   display: inline;
   color: white;
-  line-height: 50px;
+  line-height: 30px;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
   font-size: 14px;
 }
@@ -747,7 +747,7 @@ dt {
   background-color: #93bd20;
   padding: 10px 12px;
   margin-top: 6px;
-  line-height: 14px;
+  line-height: 8x;
   font-size: 14px;
   display: inline-block;
   text-align: center;
