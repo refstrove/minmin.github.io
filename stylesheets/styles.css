@@ -529,7 +529,7 @@ table {
 }
 
 body {
-  padding: 0px 0 20px 0px;
+  padding: 0px 0 10px 0px;
   margin: 0px;
   font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #f0e7d5;
@@ -784,7 +784,7 @@ section {
   max-width: 650px;
   padding: 30px 0px 50px 0px;
   margin: 20px 0;
-  margin-top: 70px;
+  margin-top: 50px;
 }
 section #title {
   border: 0;
@@ -820,7 +820,7 @@ section #title .credits.right {
   float: right;
 }
 
-@media print, screen and (max-width: 720px) {
+@media print, screen and (max-width: 600px) {
   #title .credits {
     display: block;
     width: 100%;
@@ -836,13 +836,13 @@ section #title .credits.right {
     display: block;
   }
 }
-@media print, screen and (max-width: 400px) {
+@media print, screen and (max-width: 300px) {
   #header {
     margin-top: -20px;
   }
 
   section {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   nav {
