@@ -15,7 +15,7 @@
 		overflow: hidden;
 		position: absolute;
 	}
-  </style>
+     </style>
   </head>
   <body>
     <section class="page-header">
@@ -65,44 +65,52 @@
     </div>
     <hr/>
     <div>
-		<link href="stylesheets/iSlider.css" rel="stylesheet">
-		<div id="iSlider-wrapper" height="200"></div>
-		<script type="text/javascript" src="javascripts/iSlider.js"></script>
-		<script type="text/javascript" src="javascripts/iSlider.animate.js"></script>
-	        <script id="show-code">
-		var list = [
-			// HTML String
-			{
-				content: '<div style="font-size:2em;color:yellow;text-align: center">美丽的人啊</div>'
-			},
-			// picture
-			{
-				content: './images/IMG_2546.JPG'
-			},
-			// picture
-			{
-				content: './images/IMG_20140908_122333.jpg'
-			},
-			// picture
-			{
-				content: './images/IMG_20150530_155948.jpg'
-			},
-			// picture
-			{
-				content: './images/IMG_20150405_173716.jpg'
-			},
-		];
-	
-		var S = new iSlider({
-			dom: document.getElementById('iSlider-wrapper'),
-			data: list,
-			isAutoplay: 1,
-			isLooping: 1,
-			isOverspread: 0,
-			animateTime: 800,
-			isVertical: false
-		});
-		</script>
+	<link href="stylesheets/iSlider.css" rel="stylesheet">
+	<div id="iSlider-wrapper" height="200"></div>
+	<script type="text/javascript" src="javascripts/iSlider.js"></script>
+	<script type="text/javascript" src="javascripts/iSlider.animate.js"></script>
+        <script id="show-code">
+        var list = [
+		// HTML String
+		{
+			content: '<div style="font-size:2em;color:yellow;text-align: center">美丽的人啊</div>'
+		},
+		// picture
+		{
+			content: './images/IMG_2546.JPG'
+		},
+		// picture
+		{
+			content: './images/IMG_20140908_122333.jpg'
+		},
+		// picture
+		{
+			content: './images/IMG_20150530_155948.jpg'
+		},
+		// picture
+		{
+			content: './images/IMG_20150225_135702.jpg'
+		},
+		// picture
+		{
+			content: './images/IMG_20150530_155948.jpg'
+		},
+		// picture
+		{
+			content: './images/IMG_20150725_153016.jpg'
+		},
+	];
+
+	var S = new iSlider({
+		dom: document.getElementById('iSlider-wrapper'),
+		data: list,
+		isAutoplay: 1,
+		isLooping: 1,
+		isOverspread: 0,
+		animateTime: 800,
+		isVertical: false
+	});
+	</script>
     </div>
 
 
