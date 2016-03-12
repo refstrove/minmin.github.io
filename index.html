@@ -135,9 +135,12 @@
     <hr/>
     <div>
 	<audio id="audio1" controls>Canvas not supported</audio>
-	<div>
-	<input type="text" id="audioFile" value="./Music/mo.mp3" size="30" />
-	</div>
+	<select id="audioFile"  size="30">
+	    <option value ="./Music/zaijianerdingmu.mp3">再见二丁目</option>
+	    <option value ="./Music/mo.mp3">默</option>
+	    <option value ="./Music/mo.mp3">Mercedes</option>
+	    <option value ="./Music/mo.mp3">Audi</option>
+	</select>
 	<button id="playbutton" style="color:blue;background-color:#DDA0DD;" onclick="togglePlay();">Play</button><br/>
 	<button style="color:blue;background-color:#DDA0DD;" onclick="increaseSpeed();">Increase speed</button><br/>
 	<button style="color:blue;background-color:#DDA0DD;" onclick="decreaseSpeed();">Decrease speed</button><br/>
