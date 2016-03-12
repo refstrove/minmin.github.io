@@ -150,7 +150,7 @@ a {
   padding: 0.8rem;
   overflow: auto;
   font-size: 0.9rem;
-  line-height: 1.45;
+  line-height: 1;
   border-radius: 0.3rem; }
 .main-content pre code, .main-content pre tt {
   display: inline;
@@ -197,7 +197,7 @@ a {
     padding: 0;
     margin-bottom: 1rem; }
 .main-content hr {
-  height: 2px;
+  height: 1px;
   padding: 0;
   margin: 1rem 0;
   background-color: #eff0f1;
