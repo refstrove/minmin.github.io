@@ -67,7 +67,7 @@
 	</div>
 	<hr/>
 	<div>	
-	<audio id="audio1" controls  loop="loop"></audio>
+	<audio id="audio1" controls ></audio>
 	<div>
 	<select id="audioFile" background="lightgreen">
 	    <option value ="./Music/zaijianerdingmu.mp3">再见二丁目-杨千嬅</option>
@@ -117,6 +117,7 @@
 		 document.getElementById("playbutton").innerHTML = "Pause"; // Set button text == Pause
 		 // Get file from text box and assign it to the source of the audio element 
 		 audioElm.src = document.getElementById('audioFile').value;
+		 audioElm.loop=true;
 		 audioElm.play();
 	   }
 
