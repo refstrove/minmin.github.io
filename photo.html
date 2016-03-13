@@ -7,6 +7,15 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:35,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <h1 class="project-name">我家敏敏 照片墙</h1>
+    <h2 class="project-tagline">
+ 	<div id=time>当前时间  
+	<SCRIPT>
+	document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());
+	setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+	</SCRIPT>  
+	</div>  
+    </h2>
     <style>
 	/*ul wrapper*/
 	#iSlider-wrapper {
@@ -18,19 +27,6 @@
      </style>
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">我家敏敏 照片墙</h1>
-      <h2 class="project-tagline">
-	 	<div id=time>当前时间  
-		<SCRIPT>
-		document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());
-		setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
-		</SCRIPT>  
-		</div>  
-      </h2>
-    </section>
-
-    <section class="main-content">
     <div>
 	<link href="stylesheets/iSlider.css" rel="stylesheet">
 	<div id="iSlider-wrapper"></div>
@@ -107,6 +103,5 @@
 	});
 	</script>
     </div>
-  </section>  
   </body>
 </html>
