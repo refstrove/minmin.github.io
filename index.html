@@ -71,7 +71,7 @@
     </div>
     <hr/>
     <div>
-	<audio id="audio1" width=90% controls>Canvas not supported</audio>
+	<audio id="audio1" controls></audio>
 	<div>
 	<select id="audioFile" background="lightgreen">
 	    <option value ="./Music/zaijianerdingmu.mp3">再见二丁目-杨千嬅</option>
@@ -100,7 +100,6 @@
 	   //  Alternates between play and pause based on the value of the paused property
 	   function togglePlay() {
 		 if (document.getElementById("audio1")) {
-
 		   if (audioElm.paused == true) {
 			 playAudio(audioElm);    //  if player is paused, then play the file
 		   } else {
