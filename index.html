@@ -106,7 +106,7 @@
 	   // Create a couple of global variables to use. 
 	   var audioElm = document.getElementById("audio1"); // Audio element
 	   var ratedisplay = document.getElementById("rate"); // Rate display area
-
+           audioElm.autoplay = "true";
 	   // Hook the ratechange event and display the current playbackRate after each change
 	   audioElm.addEventListener("ratechange", function () {
 		 ratedisplay.innerHTML = "Rate: " + audioElm.playbackRate;
