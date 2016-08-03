@@ -106,6 +106,7 @@
 	   // Create a couple of global variables to use. 
 	   var audioElm = document.getElementById("audio1"); // Audio element
 	   var ratedisplay = document.getElementById("rate"); // Rate display area
+	   audioElm.autoplay = "true";
 
 	   // Hook the ratechange event and display the current playbackRate after each change
 	   audioElm.addEventListener("ratechange", function () {
@@ -120,7 +121,7 @@
 		   } else {
 			 pauseAudio(audioElm);   //  if player is playing, then pause
 		   }
-		   if (audioElm.onended = function() {
+		   audioElm.onended = function() {
 			 playAudio(audioElm);    //  if player is ended, then play the next
 		   }
 		 }
@@ -134,7 +135,7 @@
 		 for (i=0; i<all_options.length; i++){
 		     if (all_options[i].value == selected) {
 		     	if (i+1==all_options.length) {
-		     		i=0;
+		     	    i=0;
 		     	}
 			 all_options[i+1].selected = true;
 			 audioElm.src = all_options[i+1].value;
