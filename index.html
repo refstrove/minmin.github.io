@@ -62,8 +62,8 @@
 	<b><i>家里还有米 有蔬菜水果吗</i></b><br>
 	<b><i>敏敏啊敏敏 夏天已经到来</i></b><br>
 	<b><i>敏敏啊敏敏 急雨热浪来袭</i></b><br>
-	<b><i>天边的飞鸟 翱翔欢呼雀跃</i></b><br>
-	<b><i>天底的牛羊 脚蹄翻出绿芽</i></b><br>
+	<b><i>天空的飞鸟 翱翔欢呼雀跃</i></b><br>
+	<b><i>天底的牛羊 林间呼啸窜过</i></b><br>
 	<b><i>美翩的蝴蝶 忆起昨年繁花</i></b><br>
 	<b><i>丽簇的蜜蜂 忙碌再度开启</i></b><br>
 	<b><i>开窍的虫鱼 破土越水而出</i></b><br>
@@ -71,7 +71,7 @@
 	</div>
 	<hr/>
 	<div>	
-	<audio id="audio1" controls ></audio>
+	<audio id="audio1" auto controls ></audio>
 	<div>
 	<select id="audioFile" background="lightgreen">
 	    <option value ="./Music/zaijianerdingmu.mp3">再见二丁目-杨千嬅</option>
@@ -120,15 +120,27 @@
 		   } else {
 			 pauseAudio(audioElm);   //  if player is playing, then pause
 		   }
+		   if (audioElm.onended = function() {
+			 playAudio(audioElm);    //  if player is ended, then play the next
+		   }
 		 }
 	   }
 
 	   function playAudio(audioElm) {
 		 document.getElementById("playbutton").innerHTML = "Pause"; // Set button text == Pause
 		 // Get file from text box and assign it to the source of the audio element 
-		 audioElm.src = document.getElementById('audioFile').value;
-		 audioElm.loop=true;
-		 audioElm.play();
+		 var all_options = document.getElementById("audioFile").options;
+		 var selected  = document.getElementById('audioFile').value;
+		 for (i=0; i<all_options.length; i++){
+		     if (all_options[i].value == selected) {
+		     	if (i+1==all_options.length) {
+		     		i=0;
+		     	}
+			 all_options[i+1].selected = true;
+			 audioElm.src = all_options[i+1].value;
+			 audioElm.play();
+		     }
+		}
 	   }
 
 	   function pauseAudio(audioElm) {
