@@ -65,9 +65,9 @@
 	<b><i>天边的飞鸟 翱翔欢呼雀跃</i></b><br>
 	<b><i>天底的牛羊 林间呼啸奔跑</i></b><br>
 	<b><i>秀雅的身姿 好似仙女下凡</i></b><br>
-	<b><i>美妙的时光 恰如昨年岁月</i></b><br>
+	<b><i>美妙的时光 仿如昨年岁月</i></b><br>
 	<b><i>开窍的生灵 遥望人间繁华</i></b><br>
-	<b><i>心底的平静 笑看风云变幻</i></b><br>
+	<b><i>心底的平静 恰似洞庭湖水</i></b><br>
 	</div>
 	<hr/>
 	<div>	
@@ -127,7 +127,7 @@
 		   if (audioElm.paused == true) {
 			 playAudio(audioElm,false);    //  if player is paused, then play the file
 		   } else {
-			 pauseAudio(audioElm,true);   //  if player is playing, then pause
+			 pauseAudio(audioElm,false);   //  if player is playing, then pause
 		   }
 		   audioElm.onended = function() {
 			 playAudio(audioElm,true);    //  if player is ended, then play the next
@@ -142,7 +142,7 @@
 		 var selected  = document.getElementById('audioFile').value;
 		 for (i=0; i<all_options.length; i++){
 		     if (all_options[i].value == selected) {
-		     	if (bNext==true){
+		     	if (bNext==ture){
 		     	    if (i+1==all_options.length) {
 		     	        i=0;
 		            }
