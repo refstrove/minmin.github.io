@@ -125,28 +125,34 @@
 	   function togglePlay() {
 		 if (document.getElementById("audio1")) {
 		   if (audioElm.paused == true) {
-			 playAudio(audioElm);    //  if player is paused, then play the file
+			 playAudio(audioElm,false);    //  if player is paused, then play the file
 		   } else {
-			 pauseAudio(audioElm);   //  if player is playing, then pause
+			 pauseAudio(audioElm,true);   //  if player is playing, then pause
 		   }
 		   audioElm.onended = function() {
-			 playAudio(audioElm);    //  if player is ended, then play the next
+			 playAudio(audioElm,true);    //  if player is ended, then play the next
 		   }
 		 }
 	   }
 
-	   function playAudio(audioElm) {
+	   function playAudio(audioElm, bNext) {
 		 document.getElementById("playbutton").innerHTML = "Pause"; // Set button text == Pause
 		 // Get file from text box and assign it to the source of the audio element 
 		 var all_options = document.getElementById("audioFile").options;
 		 var selected  = document.getElementById('audioFile').value;
 		 for (i=0; i<all_options.length; i++){
 		     if (all_options[i].value == selected) {
-		     	if (i+1==all_options.length) {
-		     	    i=0;
+		     	if (bNext==true){
+		     	    if (i+1==all_options.length) {
+		     	        i=0;
+		            }
+		     	    all_options[i + 1].selected = true;
+			    audioElm.src = all_options[i + 1].value;	
 		     	}
-			 all_options[i].selected = true;
-			 audioElm.src = all_options[i].value;
+			else {
+			    all_options[i].selected = true;
+			    audioElm.src = all_options[i].value;	
+			}
 			 audioElm.play();
 		     }
 		}
